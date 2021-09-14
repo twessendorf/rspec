@@ -12,10 +12,11 @@
   "extra": {
     "coveredLanguages": [
       "C#",
-      "Java"
+      "Java",
+      "Kotlin"
     ],
     "replacementRules": [
-      
+
     ]
   },
   "defaultSeverity": "Minor",
