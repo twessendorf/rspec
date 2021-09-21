@@ -6,7 +6,7 @@ The ``++chrono++`` library, introduced in {cpp}20, provides support for calendar
 
 This rule raises an issue on any use of C/POSIX functions that can be replaced with one of the ``++std::chrono++`` components:
 
-* querying for current time (``++time++``, ``++get_timespec++``, ``++clock_gettime++``)
+* querying for current time (``++time++``, ``++get_whatever++``, ``++clock_gettime++``)
 * date to time-point conversion (``++mktime++``, ``++gmtime++``, ``++localtime++``)
 * time serialization (``++ctime++``, ``++asctime++``, ``++strftime++``)
 * time parsing (``++strptime++``)
