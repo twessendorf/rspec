@@ -1,5 +1,5 @@
 {
-  "title": "FIXME",
+  "title": "Use type-erased \"coroutine_handle\" when applicable",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,8 +7,10 @@
     "constantCost": "5min"
   },
   "tags": [
+     "bad-practice",
+     "since-c++20"
   ],
-  "defaultSeverity": "Major",
+  "defaultSeverity": "Minor",
   "ruleSpecification": "RSPEC-6372",
   "sqKey": "S6372",
   "scope": "All",
