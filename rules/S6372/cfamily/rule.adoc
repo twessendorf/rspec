@@ -1,10 +1,10 @@
-The implement of the `await_suspend` method accepts the handle to suspended coroutine as the parameter.
+The implementation of the `await_suspend` method accepts the handle to the suspended coroutine as the parameter.
 This parameter can be defined with either specific promise type `coroutine_handle<PromiseType>` or type erased `coroutine_handle<>`.
 The former allows `await_suspend` to access the promise of the coroutine, however, it ties the implementation to a particular type.
-In a contrast `coroutine_handle<>` implementation supports all promise types.
+In contrast, using `coroutine_handle<>` increases the reusability of the code because this parameter type supports all promise types.
 
 
-This rule raises an issue for the implementation of `await_suspend` that accepts handles to a specific promise and does not use that information in implementation.
+This rule raises an issue for the implementation of `await_suspend` that accepts handles to a specific promise type and yet does not use that information.
 
 == Noncompliant Code Example
 
