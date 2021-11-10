@@ -1,0 +1,5 @@
+== Recommended Secure Coding Practices
+
+- Limit the number of Global Administrators to less than 5.
+- Apply the least privilege principle by choosing a role with a limited set of permissions.
+- Create a custom role if no built-in role meets your needs.
