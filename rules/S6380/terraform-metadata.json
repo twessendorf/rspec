@@ -1,0 +1,37 @@
+{
+  "title": "Disabling authentication is security-sensitive",
+  "type": "SECURITY_HOTSPOT",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [],
+  "extra": {
+    "replacementRules": [],
+    "legacyKeys": []
+  },
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-6380",
+  "sqKey": "S6380",
+  "scope": "Main",
+  "securityStandards": {
+    "CWE": [
+      668
+    ],
+    "OWASP Top 10 2021": [
+      "A1"
+    ]
+  },
+  "defaultQualityProfiles": [
+    "Sonar way"
+  ],
+  "all_languages": [
+    "terraform"
+  ],
+  "allKeys": [
+    "S6380"
+  ],
+  "prUrl": "https://github.com/SonarSource/rspec/pull/574",
+  "branch": "rule/add-RSPEC-S6380"
+}

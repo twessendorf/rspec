@@ -1,0 +1,35 @@
+{
+  "title": "Enabling administrative permissions is security-sensitive",
+  "type": "SECURITY_HOTSPOT",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [],
+  "extra": {
+    "replacementRules": [],
+    "legacyKeys": []
+  },
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-6379",
+  "sqKey": "S6379",
+  "scope": "Main",
+  "securityStandards": {
+    "CWE": [],
+    "OWASP": [],
+    "CIS": [],
+    "OWASP Top 10 2021": []
+  },
+  "defaultQualityProfiles": [
+    "Sonar way"
+  ],
+  "all_languages": [
+    "terraform"
+  ],
+  "allKeys": [
+    "S6379"
+  ],
+  "prUrl": "https://github.com/SonarSource/rspec/pull/573",
+  "branch": "rule/add-RSPEC-S6379"
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Regex patterns and their sub-patterns should not always fail",
+  "type": "BUG",
+  "status": "deprecated",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [],
+  "extra": {
+    "replacementRules": [
+      "RSPEC-5996",
+      "RSPEC-6001"
+    ],
+    "legacyKeys": []
+  },
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-5840",
+  "sqKey": "S5840",
+  "scope": "All",
+  "defaultQualityProfiles": [],
+  "all_languages": [
+    "java",
+    "kotlin"
+  ],
+  "allKeys": [
+    "S5840"
+  ],
+  "prUrl": "https://github.com/SonarSource/rspec/pull/414",
+  "branch": "jb/s5840-kotlin"
+}

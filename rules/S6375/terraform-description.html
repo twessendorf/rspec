@@ -1,0 +1,159 @@
+<div class="paragraph">
+<p>Azure Active Directory offers built-in roles that can be assigned to users, groups or service principals.
+Some of these roles should be assigned carefully as they grant sensitive permissions like the ability to reset passwords for all users.</p>
+</div>
+<div class="paragraph">
+<p>An Azure account that fails to limit the use of such roles has a higher risk of being breached by a compromised owner.</p>
+</div>
+<div class="paragraph">
+<p>This rule raise an issue when one of the following roles is assigned:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Application Administrator</p>
+</li>
+<li>
+<p>Authentication Administrator</p>
+</li>
+<li>
+<p>Cloud Application Administrator</p>
+</li>
+<li>
+<p>Global Administrator</p>
+</li>
+<li>
+<p>Groups Administrator</p>
+</li>
+<li>
+<p>Helpdesk Administrator</p>
+</li>
+<li>
+<p>Password Administrator</p>
+</li>
+<li>
+<p>Privileged Authentication Administrator</p>
+</li>
+<li>
+<p>Privileged Role Administrator</p>
+</li>
+<li>
+<p>User Administrator</p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_ask_yourself_whether">Ask Yourself Whether</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>The user, group or service principal requires all the permissions granted by the role it has been assigned.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There is a risk if you answered no to this question.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recommended_secure_coding_practices">Recommended Secure Coding Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Limit the number of Global Administrators to less than 5.</p>
+</li>
+<li>
+<p>Apply the least privilege principle by choosing a role with a limited set of permissions.</p>
+</li>
+<li>
+<p>Create a custom role if no built-in role meets your needs.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sensitive_code_example">Sensitive Code Example</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>resource "azuread_directory_role" "privileged-role-administrator" {
+  display_name = "Privileged Role Administrator"
+}
+
+resource "azuread_directory_role_member" "privileged-role-administrator-membership" {
+  role_object_id   = azuread_directory_role.privileged-role-administrator.object_id # Sensitive
+  member_object_id = data.azuread_user.user.object_id
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compliant_solution">Compliant Solution</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>resource "azuread_directory_role" "usage-summary-reports-reader" {
+  display_name = "Usage Summary Reports Reader"
+}
+
+resource "azuread_directory_role_member" "usage-summary-reports-reader-membership" {
+  role_object_id   = azuread_directory_role.usage-summary-reports-reader.object_id
+  member_object_id = data.azuread_user.user.object_id
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see">See</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP Top 10 2021 Category A1</a> - Broken Access Control</p>
+</li>
+<li>
+<p><a href="https://owasp.org/Top10/A03_2021-Injection/">OWASP Top 10 2021 Category A4</a> - Insecure Design</p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">OWASP Top 10 2017 Category A5</a> - Broken Access Control</p>
+</li>
+<li>
+<p><a href="https://cwe.mitre.org/data/definitions/79.html">MITRE, CWE-266</a> - Incorrect Privilege Assignment</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference">Azure AD Documentation</a> - Azure AD built-in roles</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/azure/active-directory/roles/best-practices">Azure AD Documentation</a> - Best practices for Azure AD roles</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementation_specification">Implementation Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(visible only on this page)</p>
+</div>
+<div class="sect2">
+<h3 id="_message">Message</h3>
+<div class="paragraph">
+<p>Make sure that assigning the {role_name} role is safe here.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_highlighting">Highlighting</h3>
+<div class="paragraph">
+<p>Highlight the <code>role_object_id</code> argument and assigned value.</p>
+</div>
+</div>
+</div>
+</div>

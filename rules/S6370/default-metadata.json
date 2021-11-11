@@ -1,0 +1,30 @@
+{
+  "title": "Track the use of awaiter members in \"await_suspend\" after the coroutine may be resumed",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "15min"
+  },
+  "tags": [
+    "since-c++20",
+    "symbolic-execution",
+    "suspicious"
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-6370",
+  "sqKey": "S6370",
+  "scope": "All",
+  "defaultQualityProfiles": [
+    "Sonar way"
+  ],
+  "quickfix": "unknown",
+  "all_languages": [
+    "cfamily"
+  ],
+  "allKeys": [
+    "S6370"
+  ],
+  "prUrl": "https://github.com/SonarSource/rspec/pull/490",
+  "branch": "rule/add-RSPEC-S6370"
+}

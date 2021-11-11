@@ -1,0 +1,31 @@
+{
+  "title": "Thread local variables should not be used in coroutines",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "15min"
+  },
+  "tags": [
+    "confusing",
+    "since-c++20",
+    "suspicious",
+    "unpredictable"
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-6367",
+  "sqKey": "S6367",
+  "scope": "All",
+  "defaultQualityProfiles": [
+    "Sonar way"
+  ],
+  "quickfix": "unknown",
+  "all_languages": [
+    "cfamily"
+  ],
+  "allKeys": [
+    "S6367"
+  ],
+  "prUrl": "https://github.com/SonarSource/rspec/pull/479",
+  "branch": "rule/add-RSPEC-S6367"
+}
